@@ -3,8 +3,7 @@ import random
 # create a list of 4 characters
 secret = [random.choice('ABCDEF') for item in range(4)]
 # tell the player what is going on
-print("I've selected a 4-character secret code from the letters
-A,B,C,D,E and F.")
+print("I've selected a 4-character secret code from the letters A,B,C,D,E and F.")
 print("I may have repeated some.")
 print("Now, try and guess what I chose.")
 
@@ -22,16 +21,13 @@ while list(yourguess) != secret:
 
 	# create a list of the letters that match
 	# (this will be 4 when the lists match exactly)
-	correctList = [speg for speg, gpeg in comparingList if speg
-== gpeg]
+	correctList = [speg for speg, gpeg in comparingList if speg == gpeg]
 
 	# count each of the letters in the secret and the guess
 	# and make a note of the fewest in each
-	fewestLetters = [min(secret.count(j), yourguess.count(j)) for
-j in 'ABCDEF']
+	fewestLetters = [min(secret.count(j), yourguess.count(j)) for j in 'ABCDEF']
 
 	print("Number of correct letter is ", len(correctList))
-	print("Number of unused letters is ", sum(fewestLetters) -
-len(correctList))
+	print("Number of unused letters is ", sum(fewestLetters) - len(correctList))
 
 print("YOU GOT THE ANSWER : ", secret)
